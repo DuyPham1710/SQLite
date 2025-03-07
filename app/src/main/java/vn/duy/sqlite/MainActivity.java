@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
     }
     private void createDatabaseSQLite() {
         // Thêm dữ liệu vào bảng
-        for (int i=1; i<=2; i++) {
-            databaseHandler.QueryData("INSERT INTO Notes VALUES(null, 'Ví dụ SQLite " + i + "')");
-        }
-      //  databaseHandler.QueryData("INSERT INTO Notes VALUES(null, 'Ví dụ SQLite 1')");
-      //  databaseHandler.QueryData("INSERT INTO Notes VALUES(null, 'Ví dụ SQLite 2')");
+//        for (int i=1; i<=2; i++) {
+//            databaseHandler.QueryData("INSERT INTO Notes VALUES(null, 'Ví dụ SQLite " + i + "')");
+//        }
+        databaseHandler.QueryData("INSERT INTO Notes VALUES(null, 'Ví dụ SQLite 1')");
+        databaseHandler.QueryData("INSERT INTO Notes VALUES(null, 'Ví dụ SQLite 2')");
     }
 
     private void InitDatabaseSQLite() {
@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void databaseSQLite() {
+        arrayList.clear();
         // Lấy dữ liệu từ bảng Notes
         Cursor cursor = databaseHandler.GetData("SELECT * FROM Notes");
         while (cursor.moveToNext()) {
